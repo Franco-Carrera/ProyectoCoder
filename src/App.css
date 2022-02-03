@@ -1,3 +1,28 @@
+:root {
+  --black-color: #000; /*Primer color*/
+  --black-color-opacity: rgba(0, 0, 0, 0.5); /*50%opacity*/
+  /* ------------------- */
+  --white-color: #fff; /*Segundo color*/
+  --gray-light-color: #f3f3f3;
+  /* -------------------- */
+  --gray-color: #ccc;
+  --third-color: rgba(255, 255, 255, 0.5); /*Tercer color*/
+  /* ----------------- */
+  /* --text-color: ; */
+}
+
+/* Tipografía blanca, fondo negro */
+
+h1 {
+  text-align: center;
+  font-style: inherit;
+}
+
+.h3 {
+  color: var(--black-color);
+}
+
+/* --------------Default app---------------- */
 .App {
   text-align: center;
 }
