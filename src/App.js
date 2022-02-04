@@ -1,24 +1,18 @@
-import logo from "./logo.svg";
-import "./App.css";
+//RENDERIZA TODO
+import Header from "./layout/Header";
+import Main from "./layout/Main";
+import Footer from "./layout/Footer";
+import "./styles/App.css";
+import ItemListContainer from "./components/ItemListContainer";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>Project</code>and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header></Header>
+      <ItemListContainer />
+      <Main></Main>
+      <Footer></Footer>
+    </>
   );
 }
 
