@@ -1,20 +1,24 @@
 //Se renderiza cada Item del map ItemList
-function Item({ linkData }) {
-  const capitalLetter = (str) =>
-    str.charAt(0).toUpperCase() + str.toLowerCase().slice(1);
 
+const capitalLetter = (str) =>
+  str.charAt(0).toUpperCase() + str.toLowerCase().slice(1);
+
+function Item({ linkData }) {
   return (
-    <>
-      <article className="itemsContainer">
-        <div className="body__items">
+    <section>
+      <aside className="link">
+        {/* Contenedor links */}
+        <div className="link__body">
           <button className="button__link-items">
-            <a href={linkData.url}>URL</a>
+            <a className="link__url" href={linkData.url}>
+              <p className="title__link">{capitalLetter(linkData.title)}</p>
+            </a>
+            <i className="icon__link-items">{linkData.icon}</i>
           </button>
-          <i>{linkData.icon}</i>
-          <p className="title__item">{capitalLetter(linkData.title)}</p>
         </div>
-      </article>
-    </>
+        {/* ---------------------- */}
+      </aside>
+    </section>
   );
 }
 export default Item;

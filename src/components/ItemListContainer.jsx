@@ -6,7 +6,7 @@ import { getLinks } from "../utils/firebaseConfig";
 // MAPEA LO TRAIDO POR FIREBASE
 function ItemListContainer() {
   const [links, setLinks] = useState([]);
-  //tratar con Loading +logic growapp. luego env
+  //possible state Loading
 
   useEffect(() => {
     getLinks()
@@ -25,12 +25,10 @@ function ItemListContainer() {
   }, []);
 
   return (
-    <>
-      <div className="itemListContainer">
-        <h3>Links</h3>
-        <ItemList links={links} />
-      </div>
-    </>
+    <div className="itemListContainer">
+      <h3>Links</h3>
+      <ItemList links={links} />
+    </div>
   );
 }
 
