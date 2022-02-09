@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
 import videoBackground from "../assets/video/background.webm"
+import { useEffect, useState } from "react";
 
 function Wallpaper() {
   const [background, setBackground] = useState(true);

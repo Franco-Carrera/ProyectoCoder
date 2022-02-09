@@ -1,1 +1,16 @@
 // FUNCIONES GENERALES
+import { AiFillBehanceSquare, AiFillLinkedin, AiOutlineInstagram, AiOutlineLink } from "react-icons/ai";
+import { CgMail } from "react-icons/cg";
+
+const data = [
+  { name: "behance icon", icon: AiFillBehanceSquare },
+  { name: "email", icon: CgMail },
+  { name: "instagram", icon: AiOutlineInstagram },
+  { name: "linkedin", icon: AiFillLinkedin },
+  { name: "portfolio", icon: AiOutlineLink }
+]
+export const icons = (element) => {
+  let foundIcon = data.find(item => item.name === element.toLowerCase());
+  if(foundIcon) return <foundIcon.icon/>
+  else return "?"
+}
