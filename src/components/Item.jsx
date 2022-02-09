@@ -1,19 +1,21 @@
+import { AiFillBehanceSquare, AiFillLinkedin, AiOutlineInstagram, AiOutlineLink } from "react-icons/ai";
+import { CgMail } from "react-icons/cg";
+
 //Se renderiza cada Item del map ItemList
 function Item({ linkData }) {
-  const capitalLetter = (str) =>
-    str.charAt(0).toUpperCase() + str.toLowerCase().slice(1);
-
+  const icons = [
+    { name: "behance", icon: AiFillBehanceSquare },
+    { name: "gmail", icon: CgMail },
+    { name: "instagram", icon: AiOutlineInstagram },
+    { name: "linkedin", icon: AiFillLinkedin },
+    { name: "portfolio", icon: AiOutlineLink }
+  ]
+  const foundIcon = icons.find(item => item.name === linkData.icon);
   return (
     <>
-      <article className="itemsContainer">
-        <div className="body__items">
-          <button className="button__link-items">
-            <a href={linkData.url}>URL</a>
-          </button>
-          <i>{linkData.icon}</i>
-          <p className="title__item">{capitalLetter(linkData.title)}</p>
-        </div>
-      </article>
+      <li className="personal__list">
+        <a href={linkData.url} className="personal__item"><i className="routes__icon">{<foundIcon.icon/>}</i>{linkData.title}</a>
+      </li>
     </>
   );
 }

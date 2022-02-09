@@ -1,13 +1,9 @@
 import Item from "./Item";
+
 // DEVUELVE EL PEDIDO TRAIDO DE ITEMLISTCONTAINER
-function ItemList({ links }) {
+function ItemList() {
   return (
     <>
-      <main className="mainItemList">
-        {links.map((link) => (
-          <Item key={link.id} linkData={link} />
-        ))}
-      </main>
     </>
   );
 }
