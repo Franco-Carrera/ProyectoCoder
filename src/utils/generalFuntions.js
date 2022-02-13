@@ -3,7 +3,7 @@ import { AiFillBehanceSquare, AiFillLinkedin, AiOutlineInstagram, AiOutlineLink 
 import { CgMail } from "react-icons/cg";
 
 const data = [
-  { name: "behance icon", icon: AiFillBehanceSquare },
+  { name: "behance", icon: AiFillBehanceSquare },
   { name: "email", icon: CgMail },
   { name: "instagram", icon: AiOutlineInstagram },
   { name: "linkedin", icon: AiFillLinkedin },
