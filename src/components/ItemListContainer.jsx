@@ -9,6 +9,9 @@ function ItemListContainer({ type, mobile }) {
     getLinks()
       .then((res) => setLinks(res))
       .catch((err) => console.error("Error searching items", err));
+    return () => {
+      setLinks([]);
+    };
   }, []);
   return (
     <>

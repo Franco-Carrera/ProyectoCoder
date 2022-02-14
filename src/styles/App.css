@@ -148,7 +148,7 @@ img {
   }
   .routes__title {
     height: 3.8rem;
-    /* opacity: 0; */
+    /* opacity: 1; */
   }
   .routes__title--desktop {
     justify-content: flex-end;
@@ -161,16 +161,15 @@ img {
   }
   .personal__list {
     justify-content: flex-end;
-    color: white;
-  }
-  .personal__list:hover {
-    opacity: 1;
-    pointer-events: auto;
-    background-size: 100% 2px;
   }
   .personal__item {
     justify-content: flex-end;
-    width: 3rem;
+    overflow: hidden;
+    width: 15rem;
+  }
+  .personal__item:hover {
+    translate: 725px;
+    padding: 0.25rem;
   }
   .personal__item:hover .routes__title {
     opacity: 1;

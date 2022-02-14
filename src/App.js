@@ -13,9 +13,11 @@ function App() {
         className="background"
         type="video/webm"
         muted
+        preload=""
         autoPlay
         loop
       ></video>
+
       <Header></Header>
       <Main></Main>
       <Footer></Footer>

@@ -1,5 +1,3 @@
-// import { icons } from "../utils/generalFuntions";
-
 //Se renderiza cada Item del map ItemList
 function Item({ linkData, type, mobile }) {
   return (
@@ -12,16 +10,11 @@ function Item({ linkData, type, mobile }) {
           }
           className={`${type}__item`}
         >
-          {type &&
-            (!mobile ? (
-              <span className="routes__title routes__title--desktop">
-                <span className="routes__title-contain routes__title-contain--desktop">
-                  {linkData.title}
-                </span>
-              </span>
-            ) : (
-              <span className="routes__title-contain">{linkData.title}</span>
-            ))}
+          <span className="routes__title routes__title--desktop">
+            <span className="routes__title-contain routes__title-contain--desktop">
+              {linkData.title}
+            </span>
+          </span>
         </a>
       </li>
     </>
