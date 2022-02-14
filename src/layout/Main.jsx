@@ -1,6 +1,6 @@
 import ItemListContainer from "../components/ItemListContainer";
-import logo from "../assets/image/logo.svg";
 import { useState, useEffect } from "react";
+import logo from "../assets/image/logo.svg";
 
 // RENDERIZA ITEMLISTCONTAINER Y DEMAS ETIQUETAS NECESARIAS PARA EL CUERPO DE LA PÁGINA
 function Main() {

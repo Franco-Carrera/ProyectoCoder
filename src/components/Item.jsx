@@ -1,4 +1,4 @@
-import { icons } from "../utils/generalFuntions";
+// import { icons } from "../utils/generalFuntions";
 
 //Se renderiza cada Item del map ItemList
 function Item({ linkData, type, mobile }) {
@@ -12,7 +12,7 @@ function Item({ linkData, type, mobile }) {
           }
           className={`${type}__item`}
         >
-          {type === "personal" &&
+          {type &&
             (!mobile ? (
               <span className="routes__title routes__title--desktop">
                 <span className="routes__title-contain routes__title-contain--desktop">
@@ -22,9 +22,6 @@ function Item({ linkData, type, mobile }) {
             ) : (
               <span className="routes__title-contain">{linkData.title}</span>
             ))}
-          <i className="routes__icon">
-            {linkData.icon === undefined ? "" : icons(linkData.icon)}
-          </i>
         </a>
       </li>
     </>
