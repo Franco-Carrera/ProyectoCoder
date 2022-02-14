@@ -1,24 +1,33 @@
+import { icons } from "../utils/generalFuntions";
+
 //Se renderiza cada Item del map ItemList
-
-const capitalLetter = (str) =>
-  str.charAt(0).toUpperCase() + str.toLowerCase().slice(1);
-
-function Item({ linkData }) {
+function Item({ linkData, type, mobile }) {
   return (
-    <section>
-      <aside className="link">
-        {/* Contenedor links */}
-        <div className="link__body">
-          <button className="button__link-items">
-            <a className="link__url" href={linkData.url}>
-              <p className="title__link">{capitalLetter(linkData.title)}</p>
-            </a>
-            <i className="icon__link-items">{linkData.icon}</i>
-          </button>
-        </div>
-        {/* ---------------------- */}
-      </aside>
-    </section>
+    <>
+      <li className={`${type}__list`} key={linkData.id}>
+        <a
+          href={
+            (linkData.icon.toLowerCase() === "email" ? "mailto:" : "") +
+            linkData.url.toLowerCase()
+          }
+          className={`${type}__item`}
+        >
+          {type === "personal" &&
+            (!mobile ? (
+              <span className="routes__title routes__title--desktop">
+                <span className="routes__title-contain routes__title-contain--desktop">
+                  {linkData.title}
+                </span>
+              </span>
+            ) : (
+              <span className="routes__title-contain">{linkData.title}</span>
+            ))}
+          <i className="routes__icon">
+            {linkData.icon === undefined ? "" : icons(linkData.icon)}
+          </i>
+        </a>
+      </li>
+    </>
   );
 }
 export default Item;

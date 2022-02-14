@@ -1,34 +1,32 @@
-import React from "react";
+import Item from "./Item";
 import { useState, useEffect } from "react";
-import ItemList from "./ItemList";
 import { getLinks } from "../utils/firebaseConfig";
 
 // MAPEA LO TRAIDO POR FIREBASE
-function ItemListContainer() {
+function ItemListContainer({ type, mobile }) {
   const [links, setLinks] = useState([]);
-  //possible state Loading
-
   useEffect(() => {
     getLinks()
-      .then((links) => {
-        setLinks(links);
-      })
-      .catch((err) => {
-        console.log("Error searching items", err);
-      })
-      .finally(() => {
-        console.log("Finally useEffect promise.");
-      });
-    return () => {
-      setLinks([]);
-    };
+      .then((res) => setLinks(res))
+      .catch((err) => console.error("Error searching items", err));
   }, []);
-
   return (
-    <div className="itemListContainer">
-      <h3>Links</h3>
-      <ItemList links={links} />
-    </div>
+    <>
+      {type === "none"
+        ? links.map((link) => (
+            <Item
+              key={link.id}
+              linkData={link}
+              type="personal"
+              mobile={mobile}
+            />
+          ))
+        : links
+            .filter((link) => link.type === type)
+            .map((link) => (
+              <Item key={link.id} linkData={link} type={type} mobile={mobile} />
+            ))}
+    </>
   );
 }
 
