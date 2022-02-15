@@ -1,6 +1,7 @@
 import ItemListContainer from "../components/ItemListContainer";
 import { useState, useEffect } from "react";
 import logo from "../assets/image/logo.svg";
+import CopyButton from "../components/CopyButton";
 
 // RENDERIZA ITEMLISTCONTAINER Y DEMAS ETIQUETAS NECESARIAS PARA EL CUERPO DE LA PÁGINA
 function Main() {
@@ -18,17 +19,6 @@ function Main() {
   return (
     <>
       <main className="main">
-        {/* <iframe
-          className="iframe"
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/DNC8KtzSAmA"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe> */}
-
         <section className="main__top">
           <p>David Martínez / Est. 1995</p>
           <p>/ Grafic Designer / Creative</p>
@@ -40,6 +30,7 @@ function Main() {
         </figure>
         <section className="main__bottom">
           <section className="routes">
+            <CopyButton />
             <ul className="routes__menu personal">
               <ItemListContainer
                 type={!mobile ? "none" : "personal"}

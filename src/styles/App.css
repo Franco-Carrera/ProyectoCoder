@@ -30,6 +30,12 @@ img {
   z-index: -1;
 }
 
+.aside-clipboard,
+.unique,
+.button__copy-email {
+  visibility: hidden;
+}
+
 .main {
   display: grid;
   font-size: 1.6rem;
@@ -117,6 +123,7 @@ img {
 .work {
   flex-wrap: wrap;
   gap: 0.5rem 2rem;
+  font-size: 2rem;
 }
 .work__item {
   display: block;
@@ -141,6 +148,36 @@ img {
   .routes {
     font-size: 2rem;
   }
+
+  .aside-clipboard {
+    display: flex;
+    flex-direction: row;
+  }
+  .unique {
+    align-items: center;
+    padding-right: 4rem;
+    width: 100%;
+    justify-content: center;
+    position: relative;
+    bottom: -92px;
+  }
+  .button__copy-email {
+    visibility: visible;
+    padding: 1rem;
+    border-radius: 2rem;
+    font-size: 1.5rem;
+    height: 5rem;
+    /* border: 1px thin beige; */
+    border: none;
+    outline: 0;
+    background-color: black;
+    /* background-color: rgba(196, 196, 196, 24%); */
+  }
+  .button__copy-email:hover {
+    background-color: rgba(196, 196, 196, 50%);
+    transition: 0.3s all ease-in-out;
+  }
+
   .routes:first-child {
     grid-row: 2/3;
     justify-self: center;

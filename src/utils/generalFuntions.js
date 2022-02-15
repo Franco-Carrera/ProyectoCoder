@@ -3,7 +3,7 @@ import {
   AiFillBehanceSquare,
   AiFillLinkedin,
   AiOutlineInstagram,
-  AiOutlineLink, //Check que es
+  AiOutlineLink,
 } from "react-icons/ai";
 import { CgMail } from "react-icons/cg";
 
