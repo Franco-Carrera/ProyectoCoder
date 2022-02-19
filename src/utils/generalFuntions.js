@@ -11,6 +11,6 @@ const data = [
 ]
 export const icons = (element) => {
   let foundIcon = data.find(item => item.name === element.toLowerCase());
-  if(foundIcon) return <foundIcon.icon/>
-  else return "?"
+  if(foundIcon) return <foundIcon.icon/>;
+  else return "?";
 }

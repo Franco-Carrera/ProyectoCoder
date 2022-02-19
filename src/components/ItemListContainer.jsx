@@ -1,9 +1,8 @@
-import Item from "./Item";
-import { useEffect, useState } from "react";
+import ItemList from "./ItemList";
 import { getLinks } from "../utils/firebaseConfig";
+import { useEffect, useState } from "react";
 
-// MAPEA LO TRAIDO POR FIREBASE
-function ItemListContainer({ type, mobile }) {
+function ItemListContainer({ mobile, type }) {
   const [links, setLinks] = useState([]);
   useEffect(() => {
     getLinks()
@@ -14,8 +13,11 @@ function ItemListContainer({ type, mobile }) {
     <>
       {
         type === "none" ?
-        links.map(link => <Item key={link.id} linkData={link} type="personal" mobile={mobile}/>) :
-        links.filter(link => link.type === type).map(link => <Item key={link.id} linkData={link} type={type} mobile={mobile}/>)
+        links
+          .map(link => <ItemList key={link.id} linkData={link} type="personal" mobile={mobile}/>) :
+        links
+          .filter(link => link.type === type)
+          .map(link => <ItemList key={link.id} linkData={link} type={type} mobile={mobile}/>)
       }
     </>
   );
