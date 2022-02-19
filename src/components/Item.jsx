@@ -12,7 +12,7 @@ function Item({ linkData, type, mobile }) {
         >
           <span className="routes__title routes__title--desktop">
             <span className="routes__title-contain routes__title-contain--desktop">
-              {linkData.title.toLowerCase()}
+              {linkData.title}
             </span>
           </span>
         </a>

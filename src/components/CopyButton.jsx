@@ -18,10 +18,10 @@ const CopyButton = () => {
         <button className="button__copy-email" onClick={() => setCopied(true)}>
           {copied ? (
             // <span>Copiado!</span>
-            <CgCheck size="22px" color="green" />
+            <CgCheck size="21px" color="green" />
           ) : (
             // <span style={{ color: "white" }}> email copy !!!</span>
-            <CgCopy size="22px" color="white" />
+            <CgCopy size="21px" color="white" />
           )}
         </button>
       </CopyToClipboard>

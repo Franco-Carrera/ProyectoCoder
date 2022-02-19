@@ -20,10 +20,9 @@ function Main() {
     <>
       <main className="main">
         <section className="main__top">
-          <p>David Martínez / Est. 1995</p>
-          <p>/ Grafic Designer / Creative</p>
-          <p>Strategy / Copywriter / Video Editor</p>
-          <p>/ Print / Visual Art</p>
+          <p>David Martínez / Est. 1995 / Grafic</p>
+          <p>Designer / Creative Strategy / Copywriter /</p>
+          <p>Video Editor / Print / Visual Art</p>
         </section>
         <figure className="main__logo main__middle">
           <img src={logo} alt="logo David Martinez" />
