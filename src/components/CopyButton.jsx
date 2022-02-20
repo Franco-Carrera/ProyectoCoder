@@ -1,30 +1,51 @@
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { useState, useEffect } from "react";
-import { CgCopy } from "react-icons/cg";
-import { CgCheck } from "react-icons/cg";
+import { CgCheck, CgClose, CgCopy, CgEnter } from "react-icons/cg";
 
-const CopyButton = () => {
+const CopyButton = ({ mail, mobile, setShow }) => {
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
-      if (copied) return setCopied();
-    }, 3000);
+      if (copied) return setCopied(false);
+    }, 2000);
   }, [copied]);
 
   return (
-    <aside className="aside-clipboard unique">
-      <CopyToClipboard text="davidmartinez@gmail.com">
-        <button className="button__copy-email" onClick={() => setCopied(true)}>
-          {copied ? (
-            // <span>Copiado!</span>
-            <CgCheck size="21px" color="green" />
-          ) : (
-            // <span style={{ color: "white" }}> email copy !!!</span>
-            <CgCopy size="21px" color="white" />
+    <aside className="work mail">
+      <CopyToClipboard text={mail}>
+        <button
+          className="work__item mail__right"
+          title="Copiar"
+          onClick={() => setCopied(true)}
+        >
+          {mobile && (
+            <span style={{ height: "max-content", margin: "auto" }}>
+              {!copied ? "copiar" : "Copiado"}{" "}
+            </span>
           )}
+          <i className="footer__icon">
+            {!copied ? <CgCopy /> : <CgCheck color="green" />}
+          </i>
         </button>
       </CopyToClipboard>
+      <button className="mail__close" onClick={() => setShow(false)}>
+        <i className="footer__icon">
+          <CgClose />
+        </i>
+      </button>
+      <a
+        href={`mailto:${mail}`}
+        className="work__item mail__left"
+        title="Abrir el correo"
+      >
+        {mobile && (
+          <span style={{ height: "max-content", margin: "auto" }}>Abrir</span>
+        )}
+        <i className="footer__icon">
+          <CgEnter />
+        </i>
+      </a>
     </aside>
   );
 };
