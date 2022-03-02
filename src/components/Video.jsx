@@ -4,8 +4,6 @@ import { useEffect, useState } from "react";
 
 function Video() {
   const [load, setLoad] = useState(false);
-  const [state, setState] = useState({ playing: true });
-  const handleControl = () => setState({ ...state, playing: !state.playing });
   useEffect(() => {
     if(document.querySelector(`video`)) {
       const tagVideo = document.querySelector(`video`);
@@ -13,15 +11,13 @@ function Video() {
       tagVideo.setAttribute(`autoplay`, `true`);
       tagVideo.setAttribute(`loop`, `true`);
       tagVideo.removeAttribute(`preload`);
+      tagVideo.removeAttribute(`style`);
     } else setLoad(true);
   }, [load]);
   return (
-    <>
-      <section className="video">
-        <ReactPlayer url={videoBackground} muted={true} playing={state.playing}/>
-      </section>
-      <button onClick={handleControl} className="video__control">{state.playing ? "pause" : "play"}</button>
-    </>
+    <section className="video">
+      <ReactPlayer url={videoBackground} muted={true} playing={true}/>
+    </section>
   );
 }
 
