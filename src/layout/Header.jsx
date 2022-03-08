@@ -1,14 +1,25 @@
+import { useContext, useEffect, useState } from "react";
+import { DataContext } from "../components/DataContextProvider";
+
 function Header() {
+  const test = useContext(DataContext);
+  const [email, setEmail] = useState("");
+
+  useEffect(() => {
+    if (test.data.length > 0) {
+      const dataFound = test.data.find((data) => data.icon === "email");
+      setEmail(dataFound.url);
+    }
+  }, [test.data, email]);
+
   return (
     <header className="header">
       <section className="header__container">
-        <h1 className="header__info">David Martínez&nbsp;</h1>
-        <p className="header__info">/ Est. 1995&nbsp;</p>
-        <p className="header__info">/ Graphic Designer / Creative&nbsp;</p>
+        <h1 className="header__info">David Martínez</h1>
         <p className="header__info">
-          Strategy / Copywriter / Video Editor&nbsp;
+          &nbsp;/ Est. 1995 / Graphic Designer / Creative Strategy / Copywriter
+          / Video Editor / Print / Visual Art {email && ` / ${email}`}
         </p>
-        <p className="header__info">/ Print / Visual Art</p>
       </section>
     </header>
   );

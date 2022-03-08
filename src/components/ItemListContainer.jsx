@@ -1,38 +1,24 @@
 import ItemList from "./ItemList";
-import { getLinks } from "../utils/firebaseConfig";
-import { useState, useEffect } from "react";
+import Loading from "./Loading";
+import { useContext } from "react";
+import { DataContext } from "./DataContextProvider";
 
-function ItemListContainer({ mobile, type }) {
-  const [links, setLinks] = useState([]);
-  useEffect(() => {
-    getLinks()
-      .then((res) => setLinks(res))
-      .catch((err) => console.error("Error searching items", err));
-    return () => {
-      setLinks([]);
-    };
-  }, []);
+function ItemListContainer() {
+  const test = useContext(DataContext);
+
   return (
     <>
-      {type === "none"
-        ? links.map((link) => (
-            <ItemList
-              key={link.id}
-              linkData={link}
-              type="personal"
-              mobile={mobile}
-            />
-          ))
-        : links
-            .filter((link) => link.type === type)
-            .map((link) => (
-              <ItemList
-                key={link.id}
-                linkData={link}
-                type={type}
-                mobile={mobile}
-              />
+      {test.data.length === 0 ? (
+        <Loading />
+      ) : (
+        <nav className="footer__container">
+          <ul className="footer__menu personal">
+            {test.data.map((data) => (
+              <ItemList key={data.id} data={data} />
             ))}
+          </ul>
+        </nav>
+      )}
     </>
   );
 }
