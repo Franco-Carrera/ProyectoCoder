@@ -9,7 +9,7 @@ function Header() {
       const dataFound = test.data.find(data => data.icon === "email");
       setEmail(dataFound.url)
     }
-  }, [test.data, email])
+  }, [test.data])
   return (
     <header className="header">
       <section className="header__container">
