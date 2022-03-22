@@ -6,10 +6,10 @@ function Header() {
   const [email, setEmail] = useState("");
   useEffect(() => {
     if (test.data.length > 0) {
-      const dataFound = test.data.find(data => data.icon === "email");
-      setEmail(dataFound.url)
+      const dataFound = test.data.find(data => data.name === "email");
+      setEmail(dataFound.url);
     }
-  }, [test.data])
+  }, [test.data]);
   return (
     <header className="header">
       <section className="header__container">
