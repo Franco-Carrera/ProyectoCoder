@@ -7,10 +7,10 @@ function Header() {
 
   useEffect(() => {
     if (test.data.length > 0) {
-      const dataFound = test.data.find((data) => data.icon === "email");
+      const dataFound = test.data.find((data) => data.name === "email");
       setEmail(dataFound.url);
     }
-  }, [test.data, email]);
+  }, [test.data]);
 
   return (
     <header className="header">

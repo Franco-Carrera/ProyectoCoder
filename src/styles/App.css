@@ -69,8 +69,9 @@ button {
 }
 
 .main {
-  display: flex;
+  display: table;
   height: 100%;
+  text-align: center;
   justify-content: center;
   margin: auto;
   min-height: 40vh;
@@ -78,10 +79,14 @@ button {
   z-index: 1;
 }
 .main__container {
-  display: block;
+  display: table-cell;
+  vertical-align: middle;
   margin: auto;
   max-width: 29.6rem;
   width: 100%;
+}
+tr {
+  display: inline;
 }
 .main__logo {
   -o-object-fit: contain;
@@ -92,7 +97,23 @@ button {
   pointer-events: none;
   width: 100%;
 }
-/* Idea position absolute */
+
+.mainIOS {
+  display: table;
+  height: 100%;
+  text-align: center;
+  margin: auto;
+  min-height: 25vh;
+  width: 100%;
+  z-index: 1;
+}
+.main__containerIOS {
+  display: table-cell;
+  vertical-align: middle;
+  margin: auto;
+  max-width: 29.6rem;
+  width: 100%;
+}
 
 .footer {
   align-items: flex-end;
@@ -101,6 +122,15 @@ button {
   padding: 2rem 0 1rem 0;
   z-index: 1;
 }
+
+.footerIOS {
+  align-items: flex-end;
+  display: flex;
+  justify-content: center;
+  padding: 0rem 0 1rem 0;
+  z-index: 1;
+}
+
 .footer__icon {
   display: flex;
   font-size: 3.6rem;
