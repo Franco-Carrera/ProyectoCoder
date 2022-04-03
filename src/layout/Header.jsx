@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { DataContext } from "../components/DataContextProvider";
-import is_IOS from "../utils/detect_IOS";
+import is_iOS from "../utils/detect_IOS";
 
 function Header() {
   const test = useContext(DataContext);
@@ -14,7 +14,7 @@ function Header() {
   }, [test.data]);
 
   return (
-    <header className={is_IOS() ? "headerIOS" : "header"}>
+    <header className={is_iOS() ? "headerIOS" : "header"}>
       <section className="header__container">
         <h1 className="header__info">David Martínez</h1>
         <p className="header__info">
