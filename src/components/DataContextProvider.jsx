@@ -10,7 +10,6 @@ const DataContextProvider = ({ children }) => {
       .then((res) => setData(res))
       .catch((err) => console.error("Error searching items", err));
   }, []);
-
   return (
     <DataContext.Provider value={{ data }}>{children}</DataContext.Provider>
   );

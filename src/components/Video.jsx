@@ -14,13 +14,11 @@ function Video() {
       tagVideo.removeAttribute(`style`);
     } else setLoad(true);
   }, [load]);
-
   return (
-    <>
-      <section className="video">
-        <ReactPlayer url={videoBackground} muted={true} playing={true} />
-      </section>
-    </>
+    <section className="video">
+      <ReactPlayer url={videoBackground} muted={true} playing={true} />
+    </section>
   );
 }
+
 export default Video;

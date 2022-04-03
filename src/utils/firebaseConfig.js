@@ -1,4 +1,4 @@
-import * as firebase from "firebase/app";
+import firebase from "firebase/compat/app";
 import { getFirestore } from "firebase/firestore";
 import { collection, getDocs } from "firebase/firestore";
 
@@ -14,7 +14,7 @@ const firebaseConfig = {
 const app = firebase.initializeApp(firebaseConfig);
 
 // Initialize Firebase
-export const db = getFirestore(app);
+const db = getFirestore(app);
 
 export const getLinks = () => {
   return new Promise((resolve, reject) => {
@@ -23,7 +23,6 @@ export const getLinks = () => {
         const links = querySnapshot.docs.map((doc) => {
           return { id: doc.id, ...doc.data() };
         });
-        console.log(links);
         resolve(links);
       })
       .catch((err) => {

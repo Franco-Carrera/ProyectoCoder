@@ -1,4 +1,4 @@
-const is_IOS = () => {
+const is_iOS = () => {
   if (
     navigator.userAgent.match(/iPhone/i) ||
     navigator.userAgent.match(/iPod/i) ||
@@ -6,5 +6,6 @@ const is_IOS = () => {
     navigator.userAgent.match(/iOS/i)
   )
     return true;
+  else return false;
 };
-export default is_IOS;
+export default is_iOS;

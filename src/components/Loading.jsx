@@ -6,4 +6,5 @@ function Loading() {
     </section>
   );
 }
+
 export default Loading;

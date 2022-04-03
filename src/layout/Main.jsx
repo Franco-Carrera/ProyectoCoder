@@ -18,28 +18,24 @@ const Main = () => {
   return (
     <>
       {!mobile ? (
-        <main className={is_IOS() ? "mainIOS" : "main"}>
-          <figure
-            className={is_IOS() ? "main__containerIOS" : "main__container"}
-          >
+        <main className="main">
+          <figure className="main__container">
             <img src={logo} alt="logo David Martinez" className="main__logo" />
           </figure>
         </main>
       ) : (
         mobile && (
-          <table className="main">
-            <tbody className="main__container">
-              <tr>
-                <td>
-                  <img
-                    src={logo}
-                    alt="logo David Martinez"
-                    className="main__logo"
-                  />
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <main className={is_IOS() ? "mainIOS" : "main"}>
+            <picture
+              className={is_IOS ? "main__containerIOS" : "main__container"}
+            >
+              <img
+                src={logo}
+                alt="logo David Martinez"
+                className="main__logo"
+              />
+            </picture>
+          </main>
         )
       )}
     </>
