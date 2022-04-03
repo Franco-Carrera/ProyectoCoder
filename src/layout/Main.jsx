@@ -20,12 +20,7 @@ const Main = () => {
       {!mobile ? (
         <main className="main">
           <figure className="main__container">
-            <img
-              src={logo}
-              loading="lazy"
-              alt="logo David Martinez"
-              className="main__logo"
-            />
+            <img src={logo} alt="logo David Martinez" className="main__logo" />
           </figure>
         </main>
       ) : (
@@ -36,7 +31,6 @@ const Main = () => {
             >
               <img
                 src={logo}
-                loading="lazy"
                 alt="logo David Martinez"
                 className="main__logo"
               />
